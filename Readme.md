@@ -58,15 +58,6 @@
 - **동의어는 검색어 확장 전용**: 같은 재료의 표기 차이만 수록하고(대체 재료·상하위 개념은 제외) 데이터는 변경하지 않으며 모호한 짧은 입력은 검색 규칙으로 보호한다.
 - **결정적 결과**: 같은 입력이면 같은 Top3가 나오도록 정렬 기준을 고정해 테스트 가능성을 확보한다.
 
-### 데이터 모델 (초안)
-
-```
-stock_items (id, user_id, raw_name, display_name, category_id?, purchased_at, quantity?, source: receipt | manual)
-categories  (id, user_id, name, order, is_default)
-recipes     (id, title, ingredients_text, steps, ingredient_count, step_count, servings?, cook_time?, source)
-data/synonyms.json  [{ canonical, inputs[], matches[] }]   ← 입력용 / 검색용 표현 분리, zod 스키마 검증
-```
-
 ---
 
 ## 4. 기술 스택
